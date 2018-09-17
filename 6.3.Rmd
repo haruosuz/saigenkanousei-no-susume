@@ -1,0 +1,19 @@
+---
+title: "パラメタレポ"
+output: html_document
+params:
+  vareq: !r sample(c(TRUE, FALSE), 1)
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 6.3 パラメータ付き R マークダウン
+### 6.3.1 パラメータを利用する
+```{r}
+#  vareq: TRUE
+params$vareq
+t.test(rnorm(10), rnorm(10), var.eq = params$vareq)
+```
+
